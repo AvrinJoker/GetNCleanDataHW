@@ -1,6 +1,6 @@
 # GetNCleanDataHW
-There are basically five parts of the code.
-
+This repo contains a R script *run_analysis.R* which does some data merging and cleaning for the data presented in *UCI HAR Dataset*. The analysis results are saved in *tidy_data.txt*. The variable name explanation and data handling methods are saved in *CODEBOOK.md*. 
+The organization of the R script is described as following:
 ## 1. Merge the data from teat and train set
 By using `read.table()` and `rbind()`, the test data is attached after train data: 
 (1) merge subject_* files (subject/participant number from 1-30) into **person_id**
