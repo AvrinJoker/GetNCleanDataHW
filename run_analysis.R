@@ -34,10 +34,10 @@ for (i in 1:6){allLib$activity[allLib$activity==i] <-actLib[i]}
 
 ## Appropriately labels the data set with descriptive variable names 
 # original names
-ori_nameLib = c("-","^t","^f","body","gravity","acc","jerk","gyro","mag","mean","std","\\(|\\)","\\_$")
+ori_nameLib = c("-","^t","^f","body","gravity","acc","jerk","gyro","mag","mean","std","\\(|\\)","\\_$","body_body")
 # replacement
 rpl_nameLib = c("","time_","frequency_","body_","gravity_","acceleration_","jerk_","gyroscope_",
-                "magnitude_","mean_","std_","","")
+                "magnitude_","mean_","std_","","","body")
 # replace along the list
 for (i in 1:length(ori_nameLib)) {names(allLib) <- gsub(ori_nameLib[i],rpl_nameLib[i],names(allLib))}
 write.table(allLib, './merged.txt', row.names = F)
