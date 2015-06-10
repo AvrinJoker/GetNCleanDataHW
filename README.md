@@ -61,7 +61,11 @@ for (i in 1:length(ori_nameLib)) {
 write.table(averLib,"./averaged.txt", row.names = F)
 ## 5. creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 (1) use `aggregate()` to calculate the mean in each column with particular subeject(1-30) and activity(6 kind)
+```r
 averLib = aggregate(x=allLib, by=list(activities=allLib$activity, subjects=allLib$subject), FUN=mean)
 averLib = averLib[, !(colnames(averLib) %in% c("subject", "activity"))]
+```
 (2) save the data in **tidy_data.txt**
+```r
 write.table(averLib,"./tidy_data.txt", row.names = F)
+```
