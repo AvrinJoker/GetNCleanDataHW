@@ -58,7 +58,9 @@ for (i in 1:length(ori_nameLib)) {
     }
 ```
 (3) save the data in **merged.txt**
+```r
 write.table(averLib,"./averaged.txt", row.names = F)
+```
 ## 5. creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 (1) use `aggregate()` to calculate the mean in each column with particular subeject(1-30) and activity(6 kind)
 ```r
