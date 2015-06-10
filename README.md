@@ -47,9 +47,9 @@ for (i in 1:6){
 ## 4. Appropriately labels the data set with descriptive variable names 
 (1) set a list of the elements that presented in the original column labels, and another set of the replacement
 ```r
-ori_nameLib = c("-","^t","^f","body","gravity","acc","jerk","gyro","mag","mean","std","\\(|\\)","\\_$")
+ori_nameLib = c("-","^t","^f","body","gravity","acc","jerk","gyro","mag","mean","std","\\(|\\)","\\_$","body_body")
 rpl_nameLib = c("","time_","frequency_","body_","gravity_","acceleration_","jerk_","gyroscope_",
-                "magnitude_","mean_","std_","","")
+                "magnitude_","mean_","std_","","","body")
 ```
 (2) replace along the list using `gsub()`
 ```r
