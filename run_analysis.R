@@ -39,12 +39,12 @@ ori_nameLib = c("-","^t","^f","body","gravity","acc","jerk","gyro","mag","mean",
 rpl_nameLib = c("","time_","frequency_","body_","gravity_","acceleration_","jerk_","gyroscope_",
                 "magnitude_","mean_","std_","","")
 # replace along the list
-for (i in 1:13) {names(allLib) <- gsub(ori_nameLib[i],rpl_nameLib[i],names(allLib))}
+for (i in 1:length(ori_nameLib)) {names(allLib) <- gsub(ori_nameLib[i],rpl_nameLib[i],names(allLib))}
 write.table(allLib, './merged.txt', row.names = F)
 
 ## creates a second, independent tidy data set with the average of each variable for 
 ## each activity and each subject.
 averLib = aggregate(x=allLib, by=list(activities=allLib$activity, subjects=allLib$subject), FUN=mean)
 averLib = averLib[, !(colnames(averLib) %in% c("subject", "activity"))]
-write.table(averLib,"./averaged.txt", row.names = F)
+write.table(averLib,"./tidy_data.txt", row.names = F)
 
